@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for course in courses %}
+    当前已有课程：<a href="{% url 'score_stu' pk=course.id %}">{{ course.courseName }}</a>（单击进入学生页面）<br>
+{% endfor %}
+</body>
+</html>

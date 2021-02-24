@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+当前用户：{{ name }}
+用户权限：学生
+<a href="{% url 'stu1' %}">选择课程</a>
+<a href="{% url 'stusco' %}">查询成绩</a>
+<a href="{% url 'logout' %}">登出</a>
+当前已选课程：
+{% if courses %}
+    {% for course in courses %}
+        {{ course.courseName }}
+    {% endfor %}
+    {% else %}
+    尚未选择课程
+{% endif %}
+</body>
+</html>

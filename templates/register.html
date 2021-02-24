@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'register' %}" method="post" name="register">{% csrf_token %}
+    {{ message }}
+    {{ error }}
+    用 户 名：<input type="text" name="username">
+    密    码：<input type="password" name="password1">
+    确认密码：<input type="password" name="password2">
+    用户类型：<select name="kind">
+                  <option value="student">学生</option>
+                  <option value="teacher">老师</option>
+                  <option value="admin">管理员</option>
+              </select>
+    姓名：<input type="text" name="relname">
+    编号：<input type="text" name="id">
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>

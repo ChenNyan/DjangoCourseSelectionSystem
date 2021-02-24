@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+你当前已选择的课程:
+{% for c in cs %}
+    {% for cou in allcou %}
+        {% if c.course_id == cou.id %}
+            <a href="{% url 'stuscoinfo' pk1=c.student_id pk2=cou.id %}">{{ cou.courseName }}（点击查看成绩）</a>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+</body>
+</html>

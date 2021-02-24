@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+当前课程：{{ course.courseName }}
+当前学生：{{ student.studentName }}
+<form action="{% url 'setsco' pk1=course.id pk2=student.id_id %}" method="post">{% csrf_token %}
+    分数：<input type="text" name="sco">
+    学分：<input type="text" name="cre">
+    <input type="submit">
+</form>
+</body>
+</html>

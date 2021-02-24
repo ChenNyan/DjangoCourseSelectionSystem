@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{% url 'login' %}" method="post" name="login">{% csrf_token %}
+        用户名：<input name="username" type="text">
+        密  码：<input name="password" type="password">
+        {{ error }}
+        <input type="submit" value="登录">
+        <input type="button" value="注册" onclick="goToRegister()">
+    </form>
+</body>
+<script>
+    function goToRegister() {
+        window.open({% url 'register' %})
+    }
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+当前用户：{{ name }}
+用户权限：教师
+<a href="{% url 'tea1' %}">开设课程</a>
+<a href="{% url 'score' %}">登记评分</a>
+<a href="{% url 'logout' %}">登出</a>
+当前已开课程：
+{% if courses %}
+    {% for course in courses %}
+        {{ course.courseName }}
+    {% endfor %}
+    {% else %}
+    尚未开设课程
+{% endif %}
+
+</body>
+</html>

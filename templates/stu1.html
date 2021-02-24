@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'getcou' %}" method="post">{% csrf_token %}
+    当前已开设课程：
+    {% for cou in allcou %}
+        {{ cou.id }}:{{ cou.courseName }}<br>
+    {% endfor %}
+    你要选择的课程ID：<input type="text" name="couid">
+    <input type="submit">
+</form>
+</body>
+</html>

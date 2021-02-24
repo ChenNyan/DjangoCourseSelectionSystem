@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+当前课程：{{ course.courseName }}
+课程下的学生：
+{% for c in cs %}
+    {% for student in students %}
+        {% if c.student_id == student.id_id %}
+            <a href="{% url 'scoreinfo' pk1=course.id pk2=student.id_id %}">{{ student.studentName }}（点击进入评分界面）</a>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+</body>
+</html>

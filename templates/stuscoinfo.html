@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+查询的科目：
+{% for cou in allcou %}
+    {% if cou.id == pk3 %}
+        {{ cou.courseName }}
+    {% endif %}
+{% endfor %}
+科目的成绩：{{ sco.scoreDate }}
+科目的学分：{{ sco.scoreCredit }}
+</body>
+</html>
